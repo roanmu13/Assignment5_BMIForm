@@ -27,5 +27,10 @@ namespace Assignment5_BMIForm
         {
 
         }
+
+        private void BMITitlelabel_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
