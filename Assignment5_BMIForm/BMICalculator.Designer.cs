@@ -31,14 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BMICalculator));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ImperialRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.heightTextBoxInches = new System.Windows.Forms.TextBox();
+            this.WeightTextBoxPounds = new System.Windows.Forms.TextBox();
             this.Weightlabel = new System.Windows.Forms.Label();
             this.CalculateBMIButton = new System.Windows.Forms.Button();
             this.MetricRadioButton2 = new System.Windows.Forms.RadioButton();
             this.MyHeightLabel1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ImperialDisplayTextBox = new System.Windows.Forms.TextBox();
             this.BMITitlelabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -51,14 +50,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.ImperialRadioButton1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.heightTextBoxInches, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.WeightTextBoxPounds, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.Weightlabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.CalculateBMIButton, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.MetricRadioButton2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.MyHeightLabel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.ImperialDisplayTextBox, 0, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 43);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -83,31 +81,26 @@
             this.ImperialRadioButton1.TabStop = true;
             this.ImperialRadioButton1.Text = "Imperial";
             this.ImperialRadioButton1.UseVisualStyleBackColor = true;
+            this.ImperialRadioButton1.CheckedChanged += new System.EventHandler(this.ImperialRadioButton1_CheckedChanged);
             // 
-            // textBox1
+            // heightTextBoxInches
             // 
-            this.textBox1.BackColor = System.Drawing.Color.IndianRed;
-            this.textBox1.Location = new System.Drawing.Point(3, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 38);
-            this.textBox1.TabIndex = 3;
+            this.heightTextBoxInches.BackColor = System.Drawing.Color.IndianRed;
+            this.tableLayoutPanel1.SetColumnSpan(this.heightTextBoxInches, 2);
+            this.heightTextBoxInches.Location = new System.Drawing.Point(3, 85);
+            this.heightTextBoxInches.Name = "heightTextBoxInches";
+            this.heightTextBoxInches.Size = new System.Drawing.Size(269, 38);
+            this.heightTextBoxInches.TabIndex = 3;
             // 
-            // textBox2
+            // WeightTextBoxPounds
             // 
-            this.textBox2.BackColor = System.Drawing.Color.IndianRed;
-            this.textBox2.Location = new System.Drawing.Point(140, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 38);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.IndianRed;
-            this.tableLayoutPanel1.SetColumnSpan(this.textBox3, 2);
-            this.textBox3.Location = new System.Drawing.Point(3, 167);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(269, 38);
-            this.textBox3.TabIndex = 5;
+            this.WeightTextBoxPounds.BackColor = System.Drawing.Color.IndianRed;
+            this.tableLayoutPanel1.SetColumnSpan(this.WeightTextBoxPounds, 2);
+            this.WeightTextBoxPounds.Location = new System.Drawing.Point(3, 167);
+            this.WeightTextBoxPounds.Name = "WeightTextBoxPounds";
+            this.WeightTextBoxPounds.Size = new System.Drawing.Size(269, 38);
+            this.WeightTextBoxPounds.TabIndex = 5;
+            this.WeightTextBoxPounds.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Weightlabel
             // 
@@ -130,6 +123,7 @@
             this.CalculateBMIButton.TabIndex = 7;
             this.CalculateBMIButton.Text = "Calculate BMI";
             this.CalculateBMIButton.UseVisualStyleBackColor = false;
+            this.CalculateBMIButton.Click += new System.EventHandler(this.CalculateBMIButton_Click);
             // 
             // MetricRadioButton2
             // 
@@ -152,15 +146,16 @@
             this.MyHeightLabel1.TabIndex = 2;
             this.MyHeightLabel1.Text = "My Height:";
             // 
-            // textBox4
+            // ImperialDisplayTextBox
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.textBox4, 2);
-            this.textBox4.Location = new System.Drawing.Point(3, 252);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(269, 35);
-            this.textBox4.TabIndex = 8;
+            this.tableLayoutPanel1.SetColumnSpan(this.ImperialDisplayTextBox, 2);
+            this.ImperialDisplayTextBox.Location = new System.Drawing.Point(3, 252);
+            this.ImperialDisplayTextBox.Multiline = true;
+            this.ImperialDisplayTextBox.Name = "ImperialDisplayTextBox";
+            this.ImperialDisplayTextBox.ReadOnly = true;
+            this.ImperialDisplayTextBox.Size = new System.Drawing.Size(269, 35);
+            this.ImperialDisplayTextBox.TabIndex = 8;
+            this.ImperialDisplayTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // BMITitlelabel
             // 
@@ -171,7 +166,6 @@
             this.BMITitlelabel.Size = new System.Drawing.Size(192, 31);
             this.BMITitlelabel.TabIndex = 1;
             this.BMITitlelabel.Text = "BMI Calculator";
-            this.BMITitlelabel.Click += new System.EventHandler(this.BMITitlelabel_Click);
             // 
             // pictureBox1
             // 
@@ -213,12 +207,11 @@
         private System.Windows.Forms.RadioButton ImperialRadioButton1;
         private System.Windows.Forms.RadioButton MetricRadioButton2;
         private System.Windows.Forms.Label MyHeightLabel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox heightTextBoxInches;
+        private System.Windows.Forms.TextBox WeightTextBoxPounds;
         private System.Windows.Forms.Label Weightlabel;
         private System.Windows.Forms.Button CalculateBMIButton;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox ImperialDisplayTextBox;
         private System.Windows.Forms.Label BMITitlelabel;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
