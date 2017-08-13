@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BMICalculator));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ImperialRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.heightTextBoxInches = new System.Windows.Forms.TextBox();
-            this.WeightTextBoxPounds = new System.Windows.Forms.TextBox();
+            this.HeightTextBox = new System.Windows.Forms.TextBox();
+            this.WeightTextBox = new System.Windows.Forms.TextBox();
             this.Weightlabel = new System.Windows.Forms.Label();
             this.CalculateBMIButton = new System.Windows.Forms.Button();
             this.MetricRadioButton2 = new System.Windows.Forms.RadioButton();
             this.MyHeightLabel1 = new System.Windows.Forms.Label();
-            this.ImperialDisplayTextBox = new System.Windows.Forms.TextBox();
+            this.DisplayTextBox = new System.Windows.Forms.TextBox();
+            this.HeightTextBoxInches = new System.Windows.Forms.TextBox();
             this.BMITitlelabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -50,13 +51,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.ImperialRadioButton1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.heightTextBoxInches, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.WeightTextBoxPounds, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.HeightTextBox, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.WeightTextBox, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.Weightlabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.CalculateBMIButton, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.MetricRadioButton2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.MyHeightLabel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ImperialDisplayTextBox, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.DisplayTextBox, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.HeightTextBoxInches, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 43);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -68,6 +70,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28437F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.289F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.28913F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(275, 290);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -83,24 +86,23 @@
             this.ImperialRadioButton1.UseVisualStyleBackColor = true;
             this.ImperialRadioButton1.CheckedChanged += new System.EventHandler(this.ImperialRadioButton1_CheckedChanged);
             // 
-            // heightTextBoxInches
+            // HeightTextBox
             // 
-            this.heightTextBoxInches.BackColor = System.Drawing.Color.IndianRed;
-            this.tableLayoutPanel1.SetColumnSpan(this.heightTextBoxInches, 2);
-            this.heightTextBoxInches.Location = new System.Drawing.Point(3, 85);
-            this.heightTextBoxInches.Name = "heightTextBoxInches";
-            this.heightTextBoxInches.Size = new System.Drawing.Size(269, 38);
-            this.heightTextBoxInches.TabIndex = 3;
+            this.HeightTextBox.BackColor = System.Drawing.Color.IndianRed;
+            this.HeightTextBox.Location = new System.Drawing.Point(3, 85);
+            this.HeightTextBox.Name = "HeightTextBox";
+            this.HeightTextBox.Size = new System.Drawing.Size(87, 38);
+            this.HeightTextBox.TabIndex = 3;
             // 
-            // WeightTextBoxPounds
+            // WeightTextBox
             // 
-            this.WeightTextBoxPounds.BackColor = System.Drawing.Color.IndianRed;
-            this.tableLayoutPanel1.SetColumnSpan(this.WeightTextBoxPounds, 2);
-            this.WeightTextBoxPounds.Location = new System.Drawing.Point(3, 167);
-            this.WeightTextBoxPounds.Name = "WeightTextBoxPounds";
-            this.WeightTextBoxPounds.Size = new System.Drawing.Size(269, 38);
-            this.WeightTextBoxPounds.TabIndex = 5;
-            this.WeightTextBoxPounds.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.WeightTextBox.BackColor = System.Drawing.Color.IndianRed;
+            this.tableLayoutPanel1.SetColumnSpan(this.WeightTextBox, 2);
+            this.WeightTextBox.Location = new System.Drawing.Point(3, 167);
+            this.WeightTextBox.Name = "WeightTextBox";
+            this.WeightTextBox.Size = new System.Drawing.Size(269, 38);
+            this.WeightTextBox.TabIndex = 5;
+            this.WeightTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Weightlabel
             // 
@@ -135,6 +137,7 @@
             this.MetricRadioButton2.TabStop = true;
             this.MetricRadioButton2.Text = "Metric";
             this.MetricRadioButton2.UseVisualStyleBackColor = true;
+            this.MetricRadioButton2.CheckedChanged += new System.EventHandler(this.MetricRadioButton2_CheckedChanged);
             // 
             // MyHeightLabel1
             // 
@@ -146,16 +149,24 @@
             this.MyHeightLabel1.TabIndex = 2;
             this.MyHeightLabel1.Text = "My Height:";
             // 
-            // ImperialDisplayTextBox
+            // DisplayTextBox
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.ImperialDisplayTextBox, 2);
-            this.ImperialDisplayTextBox.Location = new System.Drawing.Point(3, 252);
-            this.ImperialDisplayTextBox.Multiline = true;
-            this.ImperialDisplayTextBox.Name = "ImperialDisplayTextBox";
-            this.ImperialDisplayTextBox.ReadOnly = true;
-            this.ImperialDisplayTextBox.Size = new System.Drawing.Size(269, 35);
-            this.ImperialDisplayTextBox.TabIndex = 8;
-            this.ImperialDisplayTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tableLayoutPanel1.SetColumnSpan(this.DisplayTextBox, 2);
+            this.DisplayTextBox.Location = new System.Drawing.Point(3, 252);
+            this.DisplayTextBox.Multiline = true;
+            this.DisplayTextBox.Name = "DisplayTextBox";
+            this.DisplayTextBox.ReadOnly = true;
+            this.DisplayTextBox.Size = new System.Drawing.Size(269, 35);
+            this.DisplayTextBox.TabIndex = 8;
+            this.DisplayTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // HeightTextBoxInches
+            // 
+            this.HeightTextBoxInches.BackColor = System.Drawing.Color.IndianRed;
+            this.HeightTextBoxInches.Location = new System.Drawing.Point(140, 85);
+            this.HeightTextBoxInches.Name = "HeightTextBoxInches";
+            this.HeightTextBoxInches.Size = new System.Drawing.Size(77, 38);
+            this.HeightTextBoxInches.TabIndex = 9;
             // 
             // BMITitlelabel
             // 
@@ -207,13 +218,14 @@
         private System.Windows.Forms.RadioButton ImperialRadioButton1;
         private System.Windows.Forms.RadioButton MetricRadioButton2;
         private System.Windows.Forms.Label MyHeightLabel1;
-        private System.Windows.Forms.TextBox heightTextBoxInches;
-        private System.Windows.Forms.TextBox WeightTextBoxPounds;
+        private System.Windows.Forms.TextBox HeightTextBox;
+        private System.Windows.Forms.TextBox WeightTextBox;
         private System.Windows.Forms.Label Weightlabel;
         private System.Windows.Forms.Button CalculateBMIButton;
-        private System.Windows.Forms.TextBox ImperialDisplayTextBox;
+        private System.Windows.Forms.TextBox DisplayTextBox;
         private System.Windows.Forms.Label BMITitlelabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox HeightTextBoxInches;
     }
 }
 
