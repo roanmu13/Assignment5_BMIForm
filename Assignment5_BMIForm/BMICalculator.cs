@@ -10,9 +10,9 @@ using System.Windows.Forms;
 /*
  * Name:Rosa Munguia
  * Student No. 300735300
- * Date: August 13 2017
+ * Date: August 14 2017
  * Description: BMI Calculator Assignment
- * Version 0.3- added metric conversion and refactored imperial conversion
+ * Version 0.4: refactored imperial cal. and fixed metric error
  */
 namespace Assignment5_BMIForm
 {
@@ -91,7 +91,7 @@ namespace Assignment5_BMIForm
             bool _correctInchesHeight= double.TryParse(HeightTextBoxInches.Text, out _inchesHeight);
             bool _correctWeight= double.TryParse(WeightTextBox.Text, out _weight);
 
-            if (ImperialRadioButton1.Checked==true)
+            if (ImperialRadioButton1.Checked)
             {
                 if ((_correctHeightFtCm ==true && _heightFtCm >0) && 
                     (_correctInchesHeight==true && _inchesHeight >= 0) && 
@@ -99,7 +99,7 @@ namespace Assignment5_BMIForm
                 {
                     this._inchesHeight += this._heightFtCm * 12;
                     this._displayBMI = (this._weight * 703) / (this._inchesHeight * this._inchesHeight);
-                     DisplayTextBox.Text = this._displayBMI.ToString();
+                     DisplayTextBox.Text = String.Format("Your BMI IS " + this._displayBMI.ToString("F2")); 
                 }
 
                 else
@@ -107,14 +107,15 @@ namespace Assignment5_BMIForm
                     DisplayTextBox.Text = "Only enter numeric values";
                 }
             }
-            else if (MetricRadioButton2.Checked == true)
+            else// if (MetricRadioButton2.Checked == true)
             {
                if((_correctHeightFtCm && _heightFtCm > 0) && 
-                    (_correctInchesHeight ==true && _inchesHeight >0) &&
+                    //(_correctInchesHeight ==true && _inchesHeight >0) &&
                     (_correctWeight && Weight >0))
                     {
-                    this._displayBMI = _weight / (this._heightFtCm * this._heightFtCm );
-                    DisplayTextBox.Text = this._displayBMI.ToString();
+                    double _heightFtM = this._heightFtCm / 100;
+                    this._displayBMI = (_weight / (_heightFtM * _heightFtM)) ;
+                    DisplayTextBox.Text = String.Format("Your BMI is {0}",this._displayBMI.ToString("F2"));
                 }
                 else
                 {
@@ -133,8 +134,13 @@ namespace Assignment5_BMIForm
             this.WeightTextBox.Clear();
             this.HeightTextBox.Clear();
             this.DisplayTextBox.Clear();
-            this.HeightTextBoxInches.Clear();
             this.HeightTextBoxInches.Hide();
+            this.HeightTextBoxInches.Hide();
+
+        }
+
+        private void BMICalculator_Load(object sender, EventArgs e)
+        {
 
         }
     }

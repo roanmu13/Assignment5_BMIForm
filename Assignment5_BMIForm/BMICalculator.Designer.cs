@@ -101,7 +101,7 @@
             this.WeightTextBox.Location = new System.Drawing.Point(3, 167);
             this.WeightTextBox.Name = "WeightTextBox";
             this.WeightTextBox.Size = new System.Drawing.Size(269, 38);
-            this.WeightTextBox.TabIndex = 5;
+            this.WeightTextBox.TabIndex = 7;
             this.WeightTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Weightlabel
@@ -166,7 +166,7 @@
             this.HeightTextBoxInches.Location = new System.Drawing.Point(140, 85);
             this.HeightTextBoxInches.Name = "HeightTextBoxInches";
             this.HeightTextBoxInches.Size = new System.Drawing.Size(77, 38);
-            this.HeightTextBoxInches.TabIndex = 9;
+            this.HeightTextBoxInches.TabIndex = 5;
             // 
             // BMITitlelabel
             // 
@@ -204,6 +204,7 @@
             this.Name = "BMICalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
+            this.Load += new System.EventHandler(this.BMICalculator_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
