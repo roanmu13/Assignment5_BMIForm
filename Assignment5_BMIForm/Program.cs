@@ -8,7 +8,7 @@ using System.Windows.Forms;
  * Student No. 300735300
  * Date: August 3 2017
  * Description: BMI Calculator Assignment
- * Version 0.1- Creating user interface of calculator
+ * Version 0.2- Started splashform first
  */
 namespace Assignment5_BMIForm
 {
@@ -22,7 +22,7 @@ namespace Assignment5_BMIForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BMICalculator());
+            Application.Run(new SplashForm());
         }
     }
 }

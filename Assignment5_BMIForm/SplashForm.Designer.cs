@@ -30,13 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // SplashScreen
+            // SplashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Firebrick;
             this.ClientSize = new System.Drawing.Size(304, 442);
-            this.Name = "SplashScreen";
-            this.Text = "SplashScreen";
+            this.ControlBox = false;
+            this.Name = "SplashForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "SplashForm";
             this.ResumeLayout(false);
 
         }
