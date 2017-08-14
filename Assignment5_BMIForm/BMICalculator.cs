@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Student No. 300735300
  * Date: August 14 2017
  * Description: BMI Calculator Assignment
- * Version 0.4: refactored imperial cal. and fixed metric error
+ * Version 0.5: refactored GUI of form and add reset Button
  */
 namespace Assignment5_BMIForm
 {
@@ -25,9 +25,9 @@ namespace Assignment5_BMIForm
 
         //Private instance variables
 
-        private double _heightFtCm;
+        private double _heightFtOrCm;
 
-        private double _weight;
+        private double _weightLbsOrKg;
 
         private double _inchesHeight;
 
@@ -35,26 +35,26 @@ namespace Assignment5_BMIForm
 
         //Public properties
 
-        public double HeightFtCm {
+        public double HeightFtOrCm {
             get
             {
-                return this._heightFtCm;
+                return this._heightFtOrCm;
             }
 
             set
             {
-                this._heightFtCm = value;
+                this._heightFtOrCm = value;
             }
         }
 
-        public double Weight {
+        public double WeightLbsOrKg {
             get
             {
-                return this._weight;
+                return this._weightLbsOrKg;
             }
             set
             {
-                this._weight = value;
+                this._weightLbsOrKg = value;
             }
         }
         public double InchesHeight
@@ -87,18 +87,18 @@ namespace Assignment5_BMIForm
             //  _inchesHeight = double.Parse(HeightTextBoxInches.Text);
             //  _weight = double.Parse(WeightTextBox.Text);
 
-            bool _correctHeightFtCm = double.TryParse(HeightTextBox.Text, out _heightFtCm);
+            bool _correctHeightFtOrCm = double.TryParse(HeightTextBox.Text, out _heightFtOrCm);
             bool _correctInchesHeight= double.TryParse(HeightTextBoxInches.Text, out _inchesHeight);
-            bool _correctWeight= double.TryParse(WeightTextBox.Text, out _weight);
+            bool _correctWeightLbsOrKg= double.TryParse(WeightTextBox.Text, out _weightLbsOrKg);
 
             if (ImperialRadioButton1.Checked)
             {
-                if ((_correctHeightFtCm ==true && _heightFtCm >0) && 
+                if ((_correctHeightFtOrCm ==true && _heightFtOrCm >0) && 
                     (_correctInchesHeight==true && _inchesHeight >= 0) && 
-                    (_correctWeight==true && _weight > 0))
+                    (_correctWeightLbsOrKg==true && _weightLbsOrKg > 0))
                 {
-                    this._inchesHeight += this._heightFtCm * 12;
-                    this._displayBMI = (this._weight * 703) / (this._inchesHeight * this._inchesHeight);
+                    this._inchesHeight += this._heightFtOrCm * 12;
+                    this._displayBMI = (this._weightLbsOrKg * 703) / (this._inchesHeight * this._inchesHeight);
                      DisplayTextBox.Text = String.Format("Your BMI IS " + this._displayBMI.ToString("F2")); 
                 }
 
@@ -109,12 +109,12 @@ namespace Assignment5_BMIForm
             }
             else// if (MetricRadioButton2.Checked == true)
             {
-               if((_correctHeightFtCm && _heightFtCm > 0) && 
+               if((_correctHeightFtOrCm && _heightFtOrCm > 0) && 
                     //(_correctInchesHeight ==true && _inchesHeight >0) &&
-                    (_correctWeight && Weight >0))
+                    (_correctWeightLbsOrKg && WeightLbsOrKg >0))
                     {
-                    double _heightFtM = this._heightFtCm / 100;
-                    this._displayBMI = (_weight / (_heightFtM * _heightFtM)) ;
+                    double _heightFtM = this._heightFtOrCm / 100;
+                    this._displayBMI = (_weightLbsOrKg / (_heightFtM * _heightFtM)) ;
                     DisplayTextBox.Text = String.Format("Your BMI is {0}",this._displayBMI.ToString("F2"));
                 }
                 else
@@ -127,21 +127,31 @@ namespace Assignment5_BMIForm
         private void ImperialRadioButton1_CheckedChanged(object sender, EventArgs e)
         {
             this.HeightTextBoxInches.Show();
+            this.InchLabel.Show();
+            this.FeetLabel.Text = "ft";
+            this.LbsLabel.Text = "lbs";
         }
 
         private void MetricRadioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            this.WeightTextBox.Clear();
-            this.HeightTextBox.Clear();
-            this.DisplayTextBox.Clear();
-            this.HeightTextBoxInches.Hide();
-            this.HeightTextBoxInches.Hide();
+
+           this.WeightTextBox.Clear();
+           this.HeightTextBox.Clear();
+           this.DisplayTextBox.Clear();
+           this.HeightTextBoxInches.Hide();
+           this.HeightTextBoxInches.Hide();
+            this.InchLabel.Hide();
+            this.FeetLabel.Text = "cm";
+            this.LbsLabel.Text="kg";
 
         }
 
-        private void BMICalculator_Load(object sender, EventArgs e)
+        private void ResetButton_Click(object sender, EventArgs e)
         {
-
+            this.WeightTextBox.Text = "";
+            this.HeightTextBox.Text = "";
+            this.DisplayTextBox.Text = "";
+            this.HeightTextBoxInches.Text = "";
         }
     }
 }
