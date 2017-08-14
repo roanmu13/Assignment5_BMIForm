@@ -37,15 +37,15 @@
             this.CalculateBMIButton = new System.Windows.Forms.Button();
             this.MetricRadioButton2 = new System.Windows.Forms.RadioButton();
             this.MyHeightLabel = new System.Windows.Forms.Label();
-            this.DisplayTextBox = new System.Windows.Forms.TextBox();
             this.HeightTextBoxInches = new System.Windows.Forms.TextBox();
-            this.BMITitlelabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FeetLabel = new System.Windows.Forms.Label();
             this.InchLabel = new System.Windows.Forms.Label();
             this.LbsLabel = new System.Windows.Forms.Label();
             this.ResetButton = new System.Windows.Forms.Button();
+            this.DisplayTextBox = new System.Windows.Forms.TextBox();
             this.YourBMIisLabel = new System.Windows.Forms.Label();
+            this.BMITitlelabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -166,17 +166,6 @@
             this.MyHeightLabel.TabIndex = 2;
             this.MyHeightLabel.Text = "My Height:";
             // 
-            // DisplayTextBox
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.DisplayTextBox, 4);
-            this.DisplayTextBox.Location = new System.Drawing.Point(3, 251);
-            this.DisplayTextBox.Multiline = true;
-            this.DisplayTextBox.Name = "DisplayTextBox";
-            this.DisplayTextBox.ReadOnly = true;
-            this.DisplayTextBox.Size = new System.Drawing.Size(269, 36);
-            this.DisplayTextBox.TabIndex = 8;
-            this.DisplayTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // HeightTextBoxInches
             // 
             this.HeightTextBoxInches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -185,26 +174,6 @@
             this.HeightTextBoxInches.Name = "HeightTextBoxInches";
             this.HeightTextBoxInches.Size = new System.Drawing.Size(62, 30);
             this.HeightTextBoxInches.TabIndex = 5;
-            // 
-            // BMITitlelabel
-            // 
-            this.BMITitlelabel.AutoSize = true;
-            this.BMITitlelabel.BackColor = System.Drawing.Color.Firebrick;
-            this.BMITitlelabel.Location = new System.Drawing.Point(54, 9);
-            this.BMITitlelabel.Name = "BMITitlelabel";
-            this.BMITitlelabel.Size = new System.Drawing.Size(192, 31);
-            this.BMITitlelabel.TabIndex = 1;
-            this.BMITitlelabel.Text = "BMI Calculator";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 336);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 100);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // FeetLabel
             // 
@@ -246,6 +215,17 @@
             this.ResetButton.UseVisualStyleBackColor = false;
             this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
+            // DisplayTextBox
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.DisplayTextBox, 4);
+            this.DisplayTextBox.Location = new System.Drawing.Point(3, 251);
+            this.DisplayTextBox.Multiline = true;
+            this.DisplayTextBox.Name = "DisplayTextBox";
+            this.DisplayTextBox.ReadOnly = true;
+            this.DisplayTextBox.Size = new System.Drawing.Size(269, 36);
+            this.DisplayTextBox.TabIndex = 8;
+            this.DisplayTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // YourBMIisLabel
             // 
             this.YourBMIisLabel.AutoSize = true;
@@ -258,6 +238,26 @@
             this.YourBMIisLabel.TabIndex = 14;
             this.YourBMIisLabel.Text = "Your BMI is";
             this.YourBMIisLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BMITitlelabel
+            // 
+            this.BMITitlelabel.AutoSize = true;
+            this.BMITitlelabel.BackColor = System.Drawing.Color.Firebrick;
+            this.BMITitlelabel.Location = new System.Drawing.Point(54, 9);
+            this.BMITitlelabel.Name = "BMITitlelabel";
+            this.BMITitlelabel.Size = new System.Drawing.Size(192, 31);
+            this.BMITitlelabel.TabIndex = 1;
+            this.BMITitlelabel.Text = "BMI Calculator";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 336);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(273, 100);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // BMICalculator
             // 
@@ -275,6 +275,7 @@
             this.Name = "BMICalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BMICalculator_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

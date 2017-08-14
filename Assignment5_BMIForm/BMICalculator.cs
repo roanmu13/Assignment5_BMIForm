@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Student No. 300735300
  * Date: August 14 2017
  * Description: BMI Calculator Assignment
- * Version 0.5: refactored GUI of form and add reset Button
+ * Version 0.6- Added form closing event handler
  */
 namespace Assignment5_BMIForm
 {
@@ -152,6 +152,16 @@ namespace Assignment5_BMIForm
             this.HeightTextBox.Text = "";
             this.DisplayTextBox.Text = "";
             this.HeightTextBoxInches.Text = "";
+        }
+
+        /// <summary>
+        /// this is the formClosing event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BMICalculator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }
