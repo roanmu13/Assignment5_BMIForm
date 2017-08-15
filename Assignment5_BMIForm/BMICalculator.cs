@@ -114,7 +114,7 @@ namespace Assignment5_BMIForm
                     (_correctWeightLbsOrKg && WeightLbsOrKg >0))
                     {
                     double _heightFtM = this._heightFtOrCm / 100;
-                    this._displayBMI = (_weightLbsOrKg / (_heightFtM * _heightFtM)) ;
+                    this._displayBMI = (_weightLbsOrKg / (_heightFtM * _heightFtM));
                     DisplayTextBox.Text = String.Format("Your BMI is {0}",this._displayBMI.ToString("F2"));
                 }
                 else
@@ -160,6 +160,11 @@ namespace Assignment5_BMIForm
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void BMICalculator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BMICalculator_Load(object sender, EventArgs e)
         {
 
         }

@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.ImperialRadioButton1, 2);
             this.ImperialRadioButton1.Location = new System.Drawing.Point(3, 3);
             this.ImperialRadioButton1.Name = "ImperialRadioButton1";
-            this.ImperialRadioButton1.Size = new System.Drawing.Size(128, 33);
+            this.ImperialRadioButton1.Size = new System.Drawing.Size(130, 33);
             this.ImperialRadioButton1.TabIndex = 0;
             this.ImperialRadioButton1.TabStop = true;
             this.ImperialRadioButton1.Text = "Imperial";
@@ -125,7 +125,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.Weightlabel, 4);
             this.Weightlabel.Location = new System.Drawing.Point(3, 108);
             this.Weightlabel.Name = "Weightlabel";
-            this.Weightlabel.Size = new System.Drawing.Size(149, 31);
+            this.Weightlabel.Size = new System.Drawing.Size(186, 36);
             this.Weightlabel.TabIndex = 6;
             this.Weightlabel.Text = "My Weight:";
             this.Weightlabel.Click += new System.EventHandler(this.label1_Click);
@@ -149,7 +149,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.MetricRadioButton2, 2);
             this.MetricRadioButton2.Location = new System.Drawing.Point(139, 3);
             this.MetricRadioButton2.Name = "MetricRadioButton2";
-            this.MetricRadioButton2.Size = new System.Drawing.Size(106, 33);
+            this.MetricRadioButton2.Size = new System.Drawing.Size(130, 33);
             this.MetricRadioButton2.TabIndex = 1;
             this.MetricRadioButton2.TabStop = true;
             this.MetricRadioButton2.Text = "Metric";
@@ -162,7 +162,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.MyHeightLabel, 4);
             this.MyHeightLabel.Location = new System.Drawing.Point(3, 39);
             this.MyHeightLabel.Name = "MyHeightLabel";
-            this.MyHeightLabel.Size = new System.Drawing.Size(144, 31);
+            this.MyHeightLabel.Size = new System.Drawing.Size(179, 33);
             this.MyHeightLabel.TabIndex = 2;
             this.MyHeightLabel.Text = "My Height:";
             // 
@@ -180,7 +180,7 @@
             this.FeetLabel.AutoSize = true;
             this.FeetLabel.Location = new System.Drawing.Point(71, 72);
             this.FeetLabel.Name = "FeetLabel";
-            this.FeetLabel.Size = new System.Drawing.Size(30, 31);
+            this.FeetLabel.Size = new System.Drawing.Size(35, 36);
             this.FeetLabel.TabIndex = 10;
             this.FeetLabel.Text = "ft";
             // 
@@ -189,7 +189,7 @@
             this.InchLabel.AutoSize = true;
             this.InchLabel.Location = new System.Drawing.Point(207, 72);
             this.InchLabel.Name = "InchLabel";
-            this.InchLabel.Size = new System.Drawing.Size(35, 31);
+            this.InchLabel.Size = new System.Drawing.Size(44, 36);
             this.InchLabel.TabIndex = 11;
             this.InchLabel.Text = "in";
             // 
@@ -198,7 +198,7 @@
             this.LbsLabel.AutoSize = true;
             this.LbsLabel.Location = new System.Drawing.Point(207, 144);
             this.LbsLabel.Name = "LbsLabel";
-            this.LbsLabel.Size = new System.Drawing.Size(49, 31);
+            this.LbsLabel.Size = new System.Drawing.Size(61, 36);
             this.LbsLabel.TabIndex = 12;
             this.LbsLabel.Text = "lbs";
             // 
@@ -234,7 +234,7 @@
             this.YourBMIisLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.YourBMIisLabel.Location = new System.Drawing.Point(3, 225);
             this.YourBMIisLabel.Name = "YourBMIisLabel";
-            this.YourBMIisLabel.Size = new System.Drawing.Size(123, 23);
+            this.YourBMIisLabel.Size = new System.Drawing.Size(153, 23);
             this.YourBMIisLabel.TabIndex = 14;
             this.YourBMIisLabel.Text = "Your BMI is";
             this.YourBMIisLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -245,7 +245,7 @@
             this.BMITitlelabel.BackColor = System.Drawing.Color.Firebrick;
             this.BMITitlelabel.Location = new System.Drawing.Point(54, 9);
             this.BMITitlelabel.Name = "BMITitlelabel";
-            this.BMITitlelabel.Size = new System.Drawing.Size(192, 31);
+            this.BMITitlelabel.Size = new System.Drawing.Size(241, 39);
             this.BMITitlelabel.TabIndex = 1;
             this.BMITitlelabel.Text = "BMI Calculator";
             // 
@@ -276,6 +276,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BMICalculator_FormClosing);
+            this.Load += new System.EventHandler(this.BMICalculator_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
