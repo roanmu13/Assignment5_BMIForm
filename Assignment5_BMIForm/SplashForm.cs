@@ -12,12 +12,20 @@ using System.Windows.Forms;
  * Student Number: 300735300
  * Date: August 14 2017
  * Description: This is the splash form class for the BMI calculator
- * Version 0.3- refactored form climate control
+ * Version 0.4- created public property as alias to program.BMICalculator
  */
 namespace Assignment5_BMIForm
 {
     public partial class SplashForm : Form
     {
+        //Public Properties
+        public BMICalculator BMI_Form
+        {
+            get
+            {
+                return Program.BMI_Form;
+            }
+        }
         public SplashForm()
         {
             InitializeComponent();
@@ -30,7 +38,7 @@ namespace Assignment5_BMIForm
         private void SplashFormTimer_Tick(object sender, EventArgs e)
         {
            
-           Program.BMI_Form.Show();
+           this.BMI_Form.Show();
             this.Hide();
             SplashFormTimer.Enabled = false; //turn off timer
 

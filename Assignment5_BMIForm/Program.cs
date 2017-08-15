@@ -15,8 +15,8 @@ namespace Assignment5_BMIForm
    public static class Program
     {
         //Creates Reference to forms
-        public static BMICalculator BMI_Form = new BMICalculator;
-        /// <summary>
+        public static BMICalculator BMI_Form;
+            /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
