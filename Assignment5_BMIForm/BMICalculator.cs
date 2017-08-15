@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Student No. 300735300
  * Date: August 15 2017
  * Description: BMI Calculator Assignment
- * Version 0.7- refactored GUI for BMI calculator
+ * Version 0.8- refactor text size and completed GUI for BMI Calculator
  */
 namespace Assignment5_BMIForm
 {

@@ -93,6 +93,7 @@
             this.ImperialRadioButton1.AutoSize = true;
             this.ImperialRadioButton1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.SetColumnSpan(this.ImperialRadioButton1, 2);
+            this.ImperialRadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImperialRadioButton1.Location = new System.Drawing.Point(3, 3);
             this.ImperialRadioButton1.Name = "ImperialRadioButton1";
             this.ImperialRadioButton1.Size = new System.Drawing.Size(130, 33);
@@ -106,6 +107,7 @@
             // 
             this.HeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.HeightTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.HeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HeightTextBox.Location = new System.Drawing.Point(3, 75);
             this.HeightTextBox.MaxLength = 1;
             this.HeightTextBox.Multiline = true;
@@ -118,6 +120,7 @@
             // 
             this.WeightTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel1.SetColumnSpan(this.WeightTextBox, 3);
+            this.WeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WeightTextBox.Location = new System.Drawing.Point(3, 147);
             this.WeightTextBox.MaxLength = 3;
             this.WeightTextBox.Multiline = true;
@@ -130,9 +133,10 @@
             // 
             this.Weightlabel.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.Weightlabel, 4);
+            this.Weightlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Weightlabel.Location = new System.Drawing.Point(3, 108);
             this.Weightlabel.Name = "Weightlabel";
-            this.Weightlabel.Size = new System.Drawing.Size(186, 36);
+            this.Weightlabel.Size = new System.Drawing.Size(165, 36);
             this.Weightlabel.TabIndex = 6;
             this.Weightlabel.Text = "My Weight:";
             this.Weightlabel.Click += new System.EventHandler(this.label1_Click);
@@ -155,9 +159,10 @@
             this.MetricRadioButton2.AutoSize = true;
             this.MetricRadioButton2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.SetColumnSpan(this.MetricRadioButton2, 2);
+            this.MetricRadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetricRadioButton2.Location = new System.Drawing.Point(139, 3);
             this.MetricRadioButton2.Name = "MetricRadioButton2";
-            this.MetricRadioButton2.Size = new System.Drawing.Size(130, 33);
+            this.MetricRadioButton2.Size = new System.Drawing.Size(117, 33);
             this.MetricRadioButton2.TabIndex = 1;
             this.MetricRadioButton2.TabStop = true;
             this.MetricRadioButton2.Text = "Metric";
@@ -169,17 +174,19 @@
             this.MyHeightLabel.AutoSize = true;
             this.MyHeightLabel.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.SetColumnSpan(this.MyHeightLabel, 4);
+            this.MyHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MyHeightLabel.Location = new System.Drawing.Point(3, 39);
             this.MyHeightLabel.Name = "MyHeightLabel";
-            this.MyHeightLabel.Size = new System.Drawing.Size(179, 33);
+            this.MyHeightLabel.Size = new System.Drawing.Size(157, 33);
             this.MyHeightLabel.TabIndex = 2;
             this.MyHeightLabel.Text = "My Height:";
             // 
             // HeightTextBoxInches
             // 
             this.HeightTextBoxInches.BackColor = System.Drawing.SystemColors.Control;
+            this.HeightTextBoxInches.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HeightTextBoxInches.Location = new System.Drawing.Point(139, 75);
-            this.HeightTextBoxInches.MaxLength = 1;
+            this.HeightTextBoxInches.MaxLength = 2;
             this.HeightTextBoxInches.Multiline = true;
             this.HeightTextBoxInches.Name = "HeightTextBoxInches";
             this.HeightTextBoxInches.Size = new System.Drawing.Size(62, 30);
