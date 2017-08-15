@@ -10,9 +10,9 @@ using System.Windows.Forms;
 /*
  * Name:Rosa Munguia
  * Student No. 300735300
- * Date: August 14 2017
+ * Date: August 15 2017
  * Description: BMI Calculator Assignment
- * Version 0.6- Added form closing event handler
+ * Version 0.7- refactored GUI for BMI calculator
  */
 namespace Assignment5_BMIForm
 {
@@ -99,7 +99,7 @@ namespace Assignment5_BMIForm
                 {
                     this._inchesHeight += this._heightFtOrCm * 12;
                     this._displayBMI = (this._weightLbsOrKg * 703) / (this._inchesHeight * this._inchesHeight);
-                     DisplayTextBox.Text = String.Format("Your BMI IS " + this._displayBMI.ToString("F2")); 
+                     DisplayTextBox.Text = String.Format(this._displayBMI.ToString("F2")); 
                 }
 
                 else
@@ -115,7 +115,7 @@ namespace Assignment5_BMIForm
                     {
                     double _heightFtM = this._heightFtOrCm / 100;
                     this._displayBMI = (_weightLbsOrKg / (_heightFtM * _heightFtM));
-                    DisplayTextBox.Text = String.Format("Your BMI is {0}",this._displayBMI.ToString("F2"));
+                    DisplayTextBox.Text = String.Format(this._displayBMI.ToString("F2"));
                 }
                 else
                 {
@@ -143,6 +143,7 @@ namespace Assignment5_BMIForm
             this.InchLabel.Hide();
             this.FeetLabel.Text = "cm";
             this.LbsLabel.Text="kg";
+            this.HeightTextBox.MaxLength = 3;
 
         }
 
