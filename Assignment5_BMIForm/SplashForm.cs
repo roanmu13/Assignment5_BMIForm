@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Student Number: 300735300
  * Date: August 14 2017
  * Description: This is the splash form class for the BMI calculator
- * Version 0.4- created public property as alias to program.BMICalculator
+ * Version 0.5- Refactored GUI of Splash Form
  */
 namespace Assignment5_BMIForm
 {
